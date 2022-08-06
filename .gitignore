@@ -1,0 +1,11 @@
+# Project exclude paths
+/src/js/CanvasManager/CanvasManager.js
+/src/js/CanvasManager/CanvasManager.js.map
+/src/js/InputManager/InputManager.js
+/src/js/InputManager/InputManager.js.map
+/src/js/PanelManager/PanelManager.js
+/src/js/PanelManager/PanelManager.js.map
+/src/js/Visualizer/Visualizer.js
+/src/js/Visualizer/Visualizer.js.map
+/src/js/Main.js
+/src/js/Main.js.map

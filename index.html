@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    
+    <link rel="stylesheet" href="src/css/main.css" type="text/css" />
+</head>
+<body>
+    <div class="panel">
+<!--        <div class="panel-section">-->
+<!--            <span class="panel-section-title">Insert</span>-->
+<!--            <div class="clearfix"></div>-->
+<!--            <input class="panel-number-input" type="number" />-->
+<!--        </div>-->
+        <input class="panel-number-input" type="number" id="panel-action-number" />
+        <div id="test">
+            <div class="panel-buttons-container" id="panel-buttons-container">
+                <button class="panel-button" id="panel-insert-button">Insert</button>
+                <button class="panel-button" id="panel-delete-button">Delete</button>
+                <button class="panel-button" id="panel-find-button">Find</button>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="panel-description-box" id="panel-description-box">
+                <div id="panel-description-insert">
+                    Insert
+                </div>
+                <div id="panel-description-delete">
+                    Delete
+                    <div class="clearfix"></div>
+                    <div class="selection-container">
+                        <div class="selection-item">Left</div>
+                        <div class="selection-item selection-item--selected">Right</div>
+                    </div>
+                </div>
+                <div id="panel-description-find">
+                    Find
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="src/js/Main.js" type="module"></script>
+</body>
+</html>
