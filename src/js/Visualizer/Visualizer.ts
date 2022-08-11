@@ -1,6 +1,6 @@
 import CanvasManager from "../CanvasManager/CanvasManager.js";
 import Tree from "../Tree/Tree.js";
-import Cell from "../Tree/Cell/Cell";
+import Cell from "../Tree/Cell/Cell.js";
 import InputManager from "../InputManager/InputManager.js";
 
 class Visualizer {
@@ -38,15 +38,15 @@ class Visualizer {
         const shiftSize = 16 * (1/this.zoom >= 1 ? 1/this.zoom : 1);
 
         if (InputManager.keyboard.w) {
-            this.shiftY -= shiftSize;
-        } else if (InputManager.keyboard.s) {
             this.shiftY += shiftSize;
+        } else if (InputManager.keyboard.s) {
+            this.shiftY -= shiftSize;
         }
 
         if (InputManager.keyboard.a) {
-            this.shiftX -= shiftSize;
-        } else if (InputManager.keyboard.d) {
             this.shiftX += shiftSize;
+        } else if (InputManager.keyboard.d) {
+            this.shiftX -= shiftSize;
         }
 
         if (InputManager.keyboard.z) {

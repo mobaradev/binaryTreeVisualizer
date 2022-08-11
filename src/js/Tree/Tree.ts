@@ -38,7 +38,7 @@ class Tree {
         this.push(12)
         this.push(14)
 
-        this.delete(15);
+        // this.delete(15);
 
         // this.push(22);
         // this.push(21);
@@ -168,7 +168,7 @@ class Tree {
             let incomingCell: Cell;
             let newConnectionCell: Cell; // find better name
 
-            let selectionChoice: string = "right";
+            let selectionChoice: string = "left";
 
             if (!cell.childLeft && !cell.childRight) {
                 incomingCell = null;

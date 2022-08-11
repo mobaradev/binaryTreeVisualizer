@@ -28,7 +28,7 @@ var Tree = /** @class */ (function () {
         this.push(50.524324);
         this.push(12);
         this.push(14);
-        this.delete(15);
+        // this.delete(15);
         // this.push(22);
         // this.push(21);
         // this.push(16);
@@ -152,7 +152,7 @@ var Tree = /** @class */ (function () {
             var parentTmp = cell.parent;
             var incomingCell = void 0;
             var newConnectionCell = void 0; // find better name
-            var selectionChoice = "right";
+            var selectionChoice = "left";
             if (!cell.childLeft && !cell.childRight) {
                 incomingCell = null;
                 newConnectionCell = null;
