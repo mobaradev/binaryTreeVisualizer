@@ -159,7 +159,7 @@ class Tree {
 
 
 
-    delete(value: number) {
+    delete(value: number, selectionChoice: "left" | "right") {
         let cell = this.findCell(value);
         if (cell.isRoot()) {
             // special case
@@ -167,8 +167,6 @@ class Tree {
             let parentTmp: Cell = cell.parent;
             let incomingCell: Cell;
             let newConnectionCell: Cell; // find better name
-
-            let selectionChoice: string = "left";
 
             if (!cell.childLeft && !cell.childRight) {
                 incomingCell = null;
