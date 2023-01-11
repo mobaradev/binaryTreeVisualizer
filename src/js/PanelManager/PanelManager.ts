@@ -6,7 +6,8 @@ class PanelManager {
         console.log("PanelManager()");
 
         document.getElementById("panel-insert-button").addEventListener("click", () => this.insert());
-        document.getElementById("panel-delete-button").addEventListener("click", () => this.delete());
+        document.getElementById("panel-delete-left-button").addEventListener("click", () => this.delete("left"));
+        document.getElementById("panel-delete-right-button").addEventListener("click", () => this.delete("right"));
     }
 
     getActionNumber() {
@@ -18,9 +19,9 @@ class PanelManager {
         Main.tree.push(value);
     }
 
-    delete() {
+    delete(selectionChoice: "left" | "right") {
         let value: number = this.getActionNumber();
-        Main.tree.delete(value);
+        Main.tree.delete(value, selectionChoice);
 
         Main.visualizer.recalculateCellsPositions();
     }
