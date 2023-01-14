@@ -8,20 +8,51 @@
 </head>
 <body>
     <div class="panel">
-<!--        <div class="panel-section">-->
-<!--            <span class="panel-section-title">Insert</span>-->
-<!--            <div class="clearfix"></div>-->
-<!--            <input class="panel-number-input" type="number" />-->
-<!--        </div>-->
         <input class="panel-number-input" type="number" id="panel-action-number" />
-        <div id="test">
-            <div class="panel-buttons-container" id="panel-buttons-container">
+            <div class="panel-section" id="panel-buttons-container">
                 <button class="panel-button" id="panel-insert-button" title="Inserts the value into the tree.">Insert</button>
                 <button class="panel-button" id="panel-delete-left-button" title="Deletes the value from the tree. In case of selection, the cell on the left will be deleted.">Delete (L)</button>
                 <button class="panel-button" id="panel-delete-right-button" title="Deletes the value from the tree. In case of selection, the cell on the right will be deleted.">Delete (R)</button>
                 <button class="panel-button" id="panel-find-button" title="Returns a message with number of steps needed to find the value">Find</button>
             </div>
-            <div class="clearfix"></div>
+        <div class="clearfix"></div>
+        <hr class="panel-separator" />
+        <div class="clearfix"></div>
+        <div class="panel-section">
+            <div class="panel-subsection">
+                <div class="panel-subsection-title">Output message</div>
+                <div id="panel-output"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="panel-section">
+            <div class="panel-subsection">
+                <div class="panel-subsection-title">Statistics</div>
+                <table>
+                    <tr>
+                        <td>Nodes</td>
+                        <td id="panel-statistics-nodes"></td>
+                    </tr>
+                    <tr>
+                        <td>Unique values</td>
+                        <td id="panel-statistics-unique-values"></td>
+                    </tr>
+                    <tr>
+                        <td>Height</td>
+                        <td id="panel-statistics-height"></td>
+                    </tr>
+                    <tr>
+                        <td>Width</td>
+                        <td id="panel-statistics-width"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <hr class="panel-separator" />
+        <div class="clearfix"></div>
+        <div class="panel-section">
+            <button class="panel-button">About</button>
         </div>
     </div>
     <canvas id="canvas"></canvas>
