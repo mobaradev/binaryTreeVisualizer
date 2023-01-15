@@ -9,7 +9,7 @@ class CanvasManager {
         this.canvas = <HTMLCanvasElement> document.getElementById("canvas");
         this.ctx = <CanvasRenderingContext2D> this.canvas.getContext('2d');
 
-        this.canvas.width = window.innerWidth - 240;
+        this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
     }
 
