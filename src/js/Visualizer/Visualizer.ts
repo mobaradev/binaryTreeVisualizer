@@ -55,6 +55,15 @@ class Visualizer {
         } else if (InputManager.keyboard.x) {
             this.zoom += 0.1;
         }
+
+        if (InputManager.cursor.scroll > 0) {
+            // this.zoom += 0.1 * Math.min(InputManager.cursor.scroll, 5);
+            this.zoom *= 0.9;
+        } else if (InputManager.cursor.scroll < 0) {
+            // this.zoom += 0.1 * Math.max(InputManager.cursor.scroll, -5);
+            this.zoom *= 1.1;
+        }
+        if (this.zoom < 0) this.zoom = 0;
     }
 
     recalculateCellsPositions() {

@@ -1,10 +1,12 @@
 class Cursor {
     x: number;
     y: number;
+    scroll: number;
 
     constructor() {
         this.x = 0;
         this.y = 0;
+        this.scroll = 0;
     }
 }
 
@@ -31,6 +33,10 @@ class InputManager {
     static cursor: Cursor;
     static init() {
         console.log("InputManager");
+
+        setInterval(() => {
+            InputManager.update();
+        }, 10);
 
         InputManager.keyboard = new Keyboard();
         InputManager.cursor = new Cursor();
@@ -77,6 +83,15 @@ class InputManager {
                 InputManager.keyboard.x = false;
             }
         });
+
+        window.addEventListener("wheel", (event) => {
+            console.log("wheel - " + event.deltaY);
+            InputManager.cursor.scroll = event.deltaY;
+        });
+    }
+
+    static update() {
+        InputManager.cursor.scroll = 0;
     }
 }
 
