@@ -95,7 +95,7 @@ class Visualizer {
         let { ctx } = this.canvasManager;
 
         // background
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "aliceblue";
         ctx.fillRect(0, 0, this.canvasManager.canvas.width, this.canvasManager.canvas.height);
 
         // lines
@@ -128,7 +128,7 @@ class Visualizer {
 
         ctx.strokeStyle = "white";
         ctx.lineWidth = 1 * this.zoom;
-        ctx.fillStyle = "green";
+        ctx.fillStyle = "rgba(16, 187, 209, 1)";
         ctx.beginPath();
         ctx.arc(this.calculateRealPositionX(x), this.calculateRealPositionY(y), 50 * this.zoom, 0, 2 * Math.PI);
         ctx.stroke();
@@ -163,7 +163,7 @@ class Visualizer {
         let { ctx } = this.canvasManager;
 
         ctx.beginPath();
-        ctx.strokeStyle = "white";
+        ctx.strokeStyle = "black";
         ctx.lineWidth = 1 * this.zoom;
         ctx.moveTo(this.calculateRealPositionX(cellA.positionX), this.calculateRealPositionY(cellA.positionY));
         ctx.lineTo(this.calculateRealPositionX(cellB.positionX), this.calculateRealPositionY(cellB.positionY));
