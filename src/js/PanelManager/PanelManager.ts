@@ -17,13 +17,29 @@ class PanelManager {
     insert() {
         let value: number = this.getActionNumber();
         Main.tree.push(value);
+
+        this.setOutputMessage(`✓ ${value.toString()} inserted.`)
     }
 
     delete(selectionChoice: "left" | "right") {
         let value: number = this.getActionNumber();
-        Main.tree.delete(value, selectionChoice);
+        if (Main.tree.findCell(value)) {
+            Main.tree.delete(value, selectionChoice);
 
-        Main.visualizer.recalculateCellsPositions();
+            Main.visualizer.recalculateCellsPositions();
+
+            this.setOutputMessage(`✓ ${value.toString()} deleted.`)
+        } else {
+            this.setOutputMessage(`${value.toString()} not deleted because it doesn't exist.`)
+        }
+    }
+
+    find(value: number) {
+
+    }
+
+    setOutputMessage(message: string) {
+        document.getElementById("panel-output").innerHTML = message;
     }
 }
 
