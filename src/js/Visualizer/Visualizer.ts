@@ -9,6 +9,9 @@ class Visualizer {
     lastUpdateOnNumberOfOperations: number;
     shiftX: number;
     shiftY: number;
+    isInMove: boolean;
+    moveStartPositionX: number;
+    moveStartPositionY: number;
     zoom: number;
 
     constructor(canvasManager: CanvasManager, tree: Tree) {
@@ -20,6 +23,7 @@ class Visualizer {
 
         this.shiftX = 0;
         this.shiftY = 0;
+        this.isInMove = false;
         this.zoom = 1.0;
 
         setInterval(() => {
@@ -57,13 +61,27 @@ class Visualizer {
         }
 
         if (InputManager.cursor.scroll > 0) {
-            // this.zoom += 0.1 * Math.min(InputManager.cursor.scroll, 5);
             this.zoom *= 0.9;
         } else if (InputManager.cursor.scroll < 0) {
-            // this.zoom += 0.1 * Math.max(InputManager.cursor.scroll, -5);
             this.zoom *= 1.1;
         }
         if (this.zoom < 0) this.zoom = 0;
+
+        // mouse click
+        if (InputManager.cursor.leftPress && !this.isInMove) {
+            this.isInMove = true;
+            this.moveStartPositionX = this.shiftX;
+            this.moveStartPositionY = this.shiftY;
+        }
+
+        if (this.isInMove && !InputManager.cursor.leftPress) {
+            this.isInMove = false;
+        }
+
+        if (this.isInMove) {
+            this.shiftX = this.moveStartPositionX + InputManager.cursor.x - InputManager.cursor.leftPressX;
+            this.shiftY = this.moveStartPositionY + InputManager.cursor.y - InputManager.cursor.leftPressY;
+        }
     }
 
     recalculateCellsPositions() {
