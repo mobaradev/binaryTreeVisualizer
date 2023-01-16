@@ -194,10 +194,10 @@ class Tree {
 
             if (cell.isParentOnLeft()) {
                 parentTmp.childRight = incomingCell;
-                incomingCell.parent = parentTmp;
+                if (incomingCell) incomingCell.parent = parentTmp;
             } else {
                 parentTmp.childLeft = incomingCell;
-                incomingCell.parent = parentTmp;
+                if (incomingCell) incomingCell.parent = parentTmp;
             }
 
             cell.childLeft = null;
