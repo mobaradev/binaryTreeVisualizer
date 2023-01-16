@@ -2,11 +2,18 @@ class Cursor {
     x: number;
     y: number;
     scroll: number;
+    leftPress: boolean;
+    leftPressX: number;
+    leftPressY: number;
 
     constructor() {
         this.x = 0;
         this.y = 0;
         this.scroll = 0;
+
+        this.leftPress = false;
+        this.leftPressX = 0;
+        this.leftPressY = 0;
     }
 }
 
@@ -87,6 +94,16 @@ class InputManager {
         window.addEventListener("wheel", (event) => {
             console.log("wheel - " + event.deltaY);
             InputManager.cursor.scroll = event.deltaY;
+        });
+
+        window.addEventListener("mousedown", (event) => {
+            this.cursor.leftPress = true;
+            this.cursor.leftPressX = event.clientX;
+            this.cursor.leftPressY = event.clientY;
+        });
+
+        window.addEventListener("mouseup", (event) => {
+            this.cursor.leftPress = false;
         });
     }
 
