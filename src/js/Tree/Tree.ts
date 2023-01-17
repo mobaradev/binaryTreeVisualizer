@@ -133,6 +133,10 @@ class Tree {
         }
 
         console.log(`IsFound: ${isFound} in ${stepsCounter} steps.`);
+        if (!isFound) return -1;
+        else {
+            return stepsCounter;
+        }
     }
 
     findCell(value: number) {

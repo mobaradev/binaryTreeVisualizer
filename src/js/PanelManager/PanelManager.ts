@@ -8,6 +8,7 @@ class PanelManager {
         document.getElementById("panel-insert-button").addEventListener("click", () => this.insert());
         document.getElementById("panel-delete-left-button").addEventListener("click", () => this.delete("left"));
         document.getElementById("panel-delete-right-button").addEventListener("click", () => this.delete("right"));
+        document.getElementById("panel-find-button").addEventListener("click", () => this.find());
     }
 
     getActionNumber() {
@@ -34,7 +35,16 @@ class PanelManager {
         }
     }
 
-    find(value: number) {
+    find() {
+        let value: number = this.getActionNumber();
+
+        let stepsCounter: number = Main.tree.findValue(value);
+
+        if (stepsCounter === -1) {
+            this.setOutputMessage(`${value.toString()} has not been found.`)
+        } else {
+            this.setOutputMessage(`${value.toString()} has been found in ${stepsCounter} steps.`)
+        }
 
     }
 
