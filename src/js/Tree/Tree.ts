@@ -165,43 +165,45 @@ class Tree {
 
     delete(value: number, selectionChoice: "left" | "right") {
         let cell = this.findCell(value);
-        if (cell.isRoot()) {
-            // special case
+
+        let parentTmp: Cell = cell.parent;
+        let incomingCell: Cell;
+        let newConnectionCell: Cell; // find better name
+
+        if (!cell.childLeft && !cell.childRight) {
+            incomingCell = null;
+            newConnectionCell = null;
         } else {
-            let parentTmp: Cell = cell.parent;
-            let incomingCell: Cell;
-            let newConnectionCell: Cell; // find better name
+            if ((selectionChoice === "left" && cell.childLeft) || !cell.childRight) {
+                incomingCell = cell.childLeft;
+                newConnectionCell = incomingCell.getHighestDescendant();
 
-            if (!cell.childLeft && !cell.childRight) {
-                incomingCell = null;
-                newConnectionCell = null;
+                if (cell.childRight) {
+                    cell.childRight.parent = newConnectionCell;
+                    newConnectionCell.childRight = cell.childRight;
+                }
             } else {
-                if ((selectionChoice === "left" && cell.childLeft) || !cell.childRight) {
-                    incomingCell = cell.childLeft;
-                    newConnectionCell = incomingCell.getHighestDescendant();
+                incomingCell = cell.childRight;
+                newConnectionCell = incomingCell.getLowestDescendant();
 
-                    if (cell.childRight) {
-                        cell.childRight.parent = newConnectionCell;
-                        newConnectionCell.childRight = cell.childRight;
-                    }
-                } else {
-                    incomingCell = cell.childRight;
-                    newConnectionCell = incomingCell.getLowestDescendant();
-
-                    if (cell.childLeft) {
-                        // if selection choice is right, then there still can be a left child to handle
-                        cell.childLeft.parent = newConnectionCell;
-                        newConnectionCell.childLeft = cell.childLeft;
-                    }
+                if (cell.childLeft) {
+                    // if selection choice is right, then there still can be a left child to handle
+                    cell.childLeft.parent = newConnectionCell;
+                    newConnectionCell.childLeft = cell.childLeft;
                 }
             }
 
-            if (cell.isParentOnLeft()) {
-                parentTmp.childRight = incomingCell;
-                if (incomingCell) incomingCell.parent = parentTmp;
+            if (!cell.isRoot()) {
+                if (cell.isParentOnLeft()) {
+                    parentTmp.childRight = incomingCell;
+                    if (incomingCell) incomingCell.parent = parentTmp;
+                } else {
+                    parentTmp.childLeft = incomingCell;
+                    if (incomingCell) incomingCell.parent = parentTmp;
+                }
             } else {
-                parentTmp.childLeft = incomingCell;
-                if (incomingCell) incomingCell.parent = parentTmp;
+                incomingCell.parent = null;
+                this.rootCell = incomingCell;
             }
 
             cell.childLeft = null;
