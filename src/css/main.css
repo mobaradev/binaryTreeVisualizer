@@ -9,6 +9,7 @@ input[type="number"] {
 
 *, *::before, *::after {
     box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
 }
 
 .clearfix, .clearfix::before, .clearfix::after {
@@ -156,4 +157,15 @@ table {
     height: 50px;
     text-align: center;
     padding: 8px 24px;
+    font-size: 18px;
+}
+
+.panel-footer a {
+    color: black;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.panel-footer-github-logo {
 }
