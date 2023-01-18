@@ -91,6 +91,8 @@ class Visualizer {
     }
 
     recalculateCell(cell: Cell) {
+        if (!cell) return;
+
         if (cell.side === 0) {
             console.log("side - 0")
             cell.positionX = 0;
@@ -132,7 +134,7 @@ class Visualizer {
         let rootCell = this.tree.rootCell;
         let cellTmp = rootCell;
 
-        this.drawCellWithChildren(rootCell);
+        if (rootCell) this.drawCellWithChildren(rootCell);
 
 
 
