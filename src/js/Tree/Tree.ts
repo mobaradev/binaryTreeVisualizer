@@ -34,7 +34,7 @@ class Tree {
         this.push(50)
         this.push(51)
         this.push(0)
-        this.push(50.524324)
+        // this.push(50.524324)
         this.push(12)
         this.push(14)
 
@@ -161,10 +161,9 @@ class Tree {
         }
     }
 
-
-
     delete(value: number, selectionChoice: "left" | "right") {
         let cell = this.findCell(value);
+        if (!cell) return;
 
         let parentTmp: Cell = cell.parent;
         let incomingCell: Cell;
@@ -193,23 +192,59 @@ class Tree {
                 }
             }
 
-            if (!cell.isRoot()) {
-                if (cell.isParentOnLeft()) {
-                    parentTmp.childRight = incomingCell;
-                    if (incomingCell) incomingCell.parent = parentTmp;
-                } else {
-                    parentTmp.childLeft = incomingCell;
-                    if (incomingCell) incomingCell.parent = parentTmp;
-                }
+        }
+
+        if (!cell.isRoot()) {
+            if (cell.isParentOnLeft()) {
+                parentTmp.childRight = incomingCell;
+                if (incomingCell) incomingCell.parent = parentTmp;
             } else {
+                parentTmp.childLeft = incomingCell;
+                if (incomingCell) incomingCell.parent = parentTmp;
+            }
+        } else {
+            if (incomingCell) {
                 incomingCell.parent = null;
                 this.rootCell = incomingCell;
+            } else {
+                this.rootCell = null;
+            }
+        }
+
+        cell.childLeft = null;
+        cell.childRight = null;
+        cell.parent = null;
+
+        this.cells.splice(this.cells.indexOf(cell), 1);
+    }
+
+    getHeight() : number {
+        let height = 0;
+
+        this.cells.forEach(cell => {
+            let numberOfPredecessors = 0;
+            let parentTmp = cell.parent;
+            while (parentTmp) {
+                numberOfPredecessors++;
+                parentTmp = parentTmp.parent;
             }
 
-            cell.childLeft = null;
-            cell.childRight = null;
-            cell.parent = null;
-        }
+            if (numberOfPredecessors + 1 > height) {
+                height = numberOfPredecessors + 1;
+            }
+        })
+
+        return height;
+    }
+
+    getUniqueValues() {
+        let uniqueValues = [];
+
+        this.cells.forEach(cell => {
+            if (uniqueValues.indexOf(cell.value) === -1) uniqueValues.push(cell.value);
+        })
+
+        return uniqueValues;
     }
 }
 

@@ -20,6 +20,8 @@ class PanelManager {
         Main.tree.push(value);
 
         this.setOutputMessage(`✓ ${value.toString()} inserted.`)
+
+        this.updateStatistics();
     }
 
     delete(selectionChoice: "left" | "right") {
@@ -33,6 +35,8 @@ class PanelManager {
         } else {
             this.setOutputMessage(`${value.toString()} not deleted because it doesn't exist.`)
         }
+
+        this.updateStatistics();
     }
 
     find() {
@@ -50,6 +54,13 @@ class PanelManager {
 
     setOutputMessage(message: string) {
         document.getElementById("panel-output").innerHTML = message;
+    }
+
+    updateStatistics() {
+        document.getElementById("panel-statistics-cells").innerText = Main.tree.cells.length.toString();
+        document.getElementById("panel-statistics-edges").innerText = Math.max(0, Main.tree.cells.length - 1).toString();
+        document.getElementById("panel-statistics-height").innerText = Main.tree.getHeight().toString();
+        document.getElementById("panel-statistics-unique-values").innerText = Main.tree.getUniqueValues().length.toString();
     }
 }
 
