@@ -9,6 +9,8 @@ class PanelManager {
         document.getElementById("panel-delete-left-button").addEventListener("click", () => this.delete("left"));
         document.getElementById("panel-delete-right-button").addEventListener("click", () => this.delete("right"));
         document.getElementById("panel-find-button").addEventListener("click", () => this.find());
+
+        (<HTMLInputElement>document.getElementById("panel-action-number")).value = "1";
     }
 
     getActionNumber() {
@@ -22,6 +24,8 @@ class PanelManager {
         this.setOutputMessage(`✓ ${value.toString()} inserted.`)
 
         this.updateStatistics();
+
+        Main.canvasManager.animate();
     }
 
     delete(selectionChoice: "left" | "right") {
@@ -32,6 +36,7 @@ class PanelManager {
             Main.visualizer.recalculateCellsPositions();
 
             this.setOutputMessage(`✓ ${value.toString()} deleted.`)
+            Main.canvasManager.animate();
         } else {
             this.setOutputMessage(`${value.toString()} not deleted because it doesn't exist.`)
         }

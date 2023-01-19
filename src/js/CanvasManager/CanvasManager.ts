@@ -13,6 +13,14 @@ class CanvasManager {
         this.canvas.height = window.innerHeight;
     }
 
+    animate() {
+        document.getElementById('canvas').classList.remove("canvas-animation-out");
+        document.getElementById('canvas').classList.add("canvas-animation-in");
+        setTimeout(() => {
+            document.getElementById('canvas').classList.remove("canvas-animation-in");
+            document.getElementById('canvas').classList.add("canvas-animation-out");
+        }, 300);
+    }
 }
 
 export default CanvasManager;
