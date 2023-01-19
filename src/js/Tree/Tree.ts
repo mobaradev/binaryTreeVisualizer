@@ -1,5 +1,6 @@
 import Cell from "./Cell/Cell.js";
 import Main from "../Main.js";
+import Random from "../Random/Random.js";
 
 class Tree {
     cells: Cell[];
@@ -16,49 +17,17 @@ class Tree {
     }
 
     init() {
-        // this.push(10)
-        // this.push(9)
-        // this.push(7)
-        // this.push(8)
-        // this.push(2)
-        // this.push(3)
-        // this.push(6)
-        // this.push(4)
-        // this.push(5)
-        // this.push(0)
-        this.push(1)
-        this.push(15)
-        this.push(18)
-        this.push(17)
-        this.push(55)
-        this.push(50)
-        this.push(51)
-        this.push(0)
-        // this.push(50.524324)
-        this.push(12)
-        this.push(14)
 
-        // this.delete(15);
+    }
 
-        // this.push(22);
-        // this.push(21);
-        // this.push(16);
-        // this.push(15);
-        // this.push(17);
-        // this.push(18);
-        // this.push(19);
-        // this.push(1);
-        this.findValue(-5);
-        this.findValue(-1);
-        this.findValue(-15);
-        this.findValue(-4);
+    generateRandomTree() {
+        const min = 0;
+        const max = 32;
+        const n = 10;
 
-        console.log(this.cells[1].value)
-        console.log("test -> " + this.cells[1].calculateNumberOfDescendants("left"));
-
-        // setTimeout(() => {
-        //     this.push(17);
-        // }, 300);
+        for (let i = 0; i < n; i++) {
+            this.push(Random.getRandomNumber(min, max))
+        }
     }
 
     push(value: number) {
