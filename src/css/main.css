@@ -173,7 +173,10 @@ a {
     text-decoration: none;
 }
 
-.panel-footer-github-logo {
+.github-logo-img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 4px;
 }
 
 /* start screen */
