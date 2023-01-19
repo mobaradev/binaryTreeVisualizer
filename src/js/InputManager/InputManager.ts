@@ -48,12 +48,12 @@ class InputManager {
         InputManager.keyboard = new Keyboard();
         InputManager.cursor = new Cursor();
 
-        window.addEventListener('mousemove', (event) => {
+        document.getElementById("canvas").addEventListener('mousemove', (event) => {
             InputManager.cursor.x = event.clientX;
             InputManager.cursor.y = event.clientY;
         });
 
-        window.addEventListener('keydown', (event) => {
+        document.getElementById("canvas").addEventListener('keydown', (event) => {
             const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
             const code = event.code;
 
@@ -72,7 +72,7 @@ class InputManager {
             }
         });
 
-        window.addEventListener('keyup', (event) => {
+        document.getElementById("canvas").addEventListener('keyup', (event) => {
             const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
             const code = event.code;
 
@@ -91,18 +91,18 @@ class InputManager {
             }
         });
 
-        window.addEventListener("wheel", (event) => {
+        document.getElementById("canvas").addEventListener("wheel", (event) => {
             console.log("wheel - " + event.deltaY);
             InputManager.cursor.scroll = event.deltaY;
         });
 
-        window.addEventListener("mousedown", (event) => {
+        document.getElementById("canvas").addEventListener("mousedown", (event) => {
             this.cursor.leftPress = true;
             this.cursor.leftPressX = event.clientX;
             this.cursor.leftPressY = event.clientY;
         });
 
-        window.addEventListener("mouseup", (event) => {
+        document.getElementById("canvas").addEventListener("mouseup", (event) => {
             this.cursor.leftPress = false;
         });
     }
