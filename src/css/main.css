@@ -18,6 +18,11 @@ input[type="number"] {
     clear: both;
 }
 
+.transparent {
+    opacity: 0;
+    transition: 0.7s;
+}
+
 .hidden {
     display: none;
 }
@@ -160,7 +165,7 @@ table {
     font-size: 18px;
 }
 
-.panel-footer a {
+a {
     color: black;
     font-weight: bold;
     font-style: normal;
@@ -168,4 +173,81 @@ table {
 }
 
 .panel-footer-github-logo {
+}
+
+/* start screen */
+
+.large-button {
+    width: 120px;
+    height: 120px;
+    margin: 8px 8px;
+    font-size: 14px;
+    cursor: pointer;
+    background: none;
+    color: #5d5d5d;
+    transition: 0.5s;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    float: left;
+    color: gray;
+}
+
+.large-button:hover {
+    color: black;
+    border: 1px solid black;
+}
+
+.start-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    color: black;
+}
+.start-screen-wrapper {
+    width: 500px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+}
+
+.start-screen-wrapper h1 {
+    font-size: 40px;
+    margin-bottom: 0px;
+}
+
+.start-screen-author {
+    margin-top: 0px;
+    text-align: right;
+    margin-right: 50px;
+}
+
+.start-screen-logo {
+    text-align: center;
+}
+
+.start-screen-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-screen-version {
+    position: absolute;
+    bottom: 16px;
+    right: 24px;
+    font-size: 14px;
+}
+
+.start-screen-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
