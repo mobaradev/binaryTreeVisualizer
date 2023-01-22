@@ -60,19 +60,21 @@
             <hr class="panel-separator" />
             <div class="clearfix"></div>
             <div class="panel-section">
-                <button class="panel-button">About</button>
+                <button class="panel-button" id="panel-about-button">About</button>
             </div>
         </div>
     </div>
 
-    <div class="start-screen" id="start-screen">
-        <div class="start-screen-wrapper">
-            <div class="start-screen-logo">
-                <h1>Binary Tree Visualizer</h1>
-                <p class="start-screen-author">
-                    by
-                    <a href="#">mobaradev</a>
-                </p>
+    <div class="screen" id="start-screen">
+        <div class="screen-wrapper start-screen-wrapper">
+            <div class="centered-wrapper">
+                <div class="logo-with-author-full">
+                    <h1>Binary Tree Visualizer</h1>
+                    <p class="author">
+                        by
+                        <a href="#">mobaradev</a>
+                    </p>
+                </div>
             </div>
             <div class="clearfix"></div>
             <div>
@@ -97,6 +99,77 @@
         </div>
 
         <span class="start-screen-version">version: <span id="app-version-number"></span></span>
+    </div>
+
+    <div class="screen hidden transparent" id="about-screen">
+        <div class="panel-button screen-x-button" id="about-screen-x-button">X</div>
+        <div class="screen-wrapper">
+            <div class="centered-wrapper">
+                <div class="logo-with-author-full">
+                    <h1>Binary Tree Visualizer</h1>
+                    <p class="author">
+                        by
+                        <a href="#">mobaradev</a>
+                    </p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <h2>How to use</h2>
+            <p>...</p>
+            <div class="clearfix"></div>
+
+            <h2>Functions</h2>
+            <h3>Insert</h3>
+            <p>Inserts given value into the tree</p>
+
+            <h3>Delete (L)</h3>
+            <p>Deletes the value from the tree. If the cell has both children, the child from the left will be promoted.</p>
+            <p>
+                <b>Example:</b>
+            </p>
+
+            <h3>Delete (R)</h3>
+            <p>Deletes the value from the tree. If the cell has both children, the child from the right will be promoted.</p>
+
+            <div class="panel-separator"></div>
+            <h2>Author</h2>
+            <p>
+                Michal Obara
+                <br />
+                <a href="#">mobaradev on Github</a>
+            </p>
+
+            <div class="panel-separator"></div>
+            <h2>License</h2>
+            <p>
+                MIT License
+                <br /><br />
+
+                Copyright (c) 2022 Michal Obara
+                <br /><br />
+
+                Permission is hereby granted, free of charge, to any person obtaining a copy
+                of this software and associated documentation files (the "Software"), to deal
+                in the Software without restriction, including without limitation the rights
+                to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                copies of the Software, and to permit persons to whom the Software is
+                furnished to do so, subject to the following conditions:
+                <br /><br />
+
+                The above copyright notice and this permission notice shall be included in all
+                copies or substantial portions of the Software.
+                <br /><br />
+
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+                SOFTWARE.
+            </p>
+        </div>
     </div>
 
     <canvas id="canvas"></canvas>

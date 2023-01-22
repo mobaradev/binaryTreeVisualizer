@@ -10,6 +10,8 @@ class PanelManager {
         document.getElementById("panel-delete-right-button").addEventListener("click", () => this.delete("right"));
         document.getElementById("panel-find-button").addEventListener("click", () => this.find());
 
+        document.getElementById("panel-about-button").addEventListener("click", () => Main.aboutScreen.show());
+
         (<HTMLInputElement>document.getElementById("panel-action-number")).value = "1";
     }
 

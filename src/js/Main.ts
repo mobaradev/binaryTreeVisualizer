@@ -4,6 +4,7 @@ import Visualizer from "./Visualizer/Visualizer.js";
 import InputManager from "./InputManager/InputManager.js";
 import PanelManager from "./PanelManager/PanelManager.js";
 import StartScreen from "./StartScreen/StartScreen.js";
+import AboutScreen from "./AboutScreen/AboutScreen.js";
 
 class Main {
     static appVersionNumber: string;
@@ -12,6 +13,7 @@ class Main {
     static visualizer: Visualizer;
     static panelManager: PanelManager;
     static startScreen: StartScreen;
+    static aboutScreen: AboutScreen;
 
     static init() {
         console.log("Main() init")
@@ -21,6 +23,7 @@ class Main {
         Main.visualizer = new Visualizer(Main.canvasManager, Main.tree);
         Main.panelManager = new PanelManager();
         Main.startScreen = new StartScreen();
+        Main.aboutScreen = new AboutScreen();
 
         InputManager.init();
 
