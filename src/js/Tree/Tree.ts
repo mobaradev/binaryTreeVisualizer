@@ -11,13 +11,12 @@ class Tree {
         console.log("Tree()");
         this.cells = [];
         this.numberOfOperations = 0;
-
-        // this.cells.push(new Cell(this,0));
-
     }
 
     init() {
-
+        setTimeout(() => {
+            Main.panelManager.updateStatistics();
+        }, 10);
     }
 
     generateRandomTree() {
@@ -28,6 +27,8 @@ class Tree {
         for (let i = 0; i < n; i++) {
             this.push(Random.getRandomNumber(min, max))
         }
+
+        Main.panelManager.updateStatistics();
     }
 
     push(value: number) {
