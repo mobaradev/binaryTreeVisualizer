@@ -111,6 +111,7 @@ class Tree {
 
     findCell(value: number) {
         let cellTmp = this.rootCell;
+        if (!cellTmp) return null;
 
         while (true) {
             if (value > cellTmp.value) {
