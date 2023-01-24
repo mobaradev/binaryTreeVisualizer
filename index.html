@@ -116,8 +116,81 @@
             <div class="clearfix"></div>
 
             <h2>How to use</h2>
-            <p>...</p>
+            <h3>Getting started</h3>
+            <p>
+                Select the initial tree:
+                <ul>
+                    <li>
+                        Start with an empty tree
+                    </li>
+                    <li>
+                        Start with a random tree
+                    </li>
+                </ul>
+            </p>
+
             <div class="clearfix"></div>
+            <h3>Manage your tree</h3>
+            <p>
+                Tree can be managed from the side-panel on the left.
+            </p>
+
+            <p>
+                Insert the number into the input area.
+            </p>
+
+            <img src="src/images/aboutScreen/a1.png" height="100" />
+
+            <p>
+                This value will be used in functions available from the buttons below:
+                <ul>
+                    <li>Insert</li>
+                    <li>Delete (L)</li>
+                    <li>Delete (R)</li>
+                    <li>Find</li>
+                </ul>
+            </p>
+
+            <div class="clearfix"></div>
+            <h3>Control the camera</h3>
+            <h4>Zoom</h4>
+            <p>
+                You can zoom in or out using your mouse wheel or touchpad gestures.
+            </p>
+            <p>
+                Alternatively, you can use <b>Z</b> key to zoom out and <b>X</b> key to zoom in.
+            </p>
+            <h4>Position</h4>
+            <p>
+                You can change the camera position using mouse of touchpad gestures. Hold left button and move cursor at the same time.
+            </p>
+            <p>
+                Alternatively, you can use <b>WASD</b> keys.
+            </p>
+
+            <div class="clearfix"></div>
+            <h3>Observe tree's statistics</h3>
+            <p>
+                Statistics section provides numerical data that describes the tree.
+            </p>
+            <h4>Cells</h4>
+            <p>Number of cells in the tree</p>
+
+            <h4>Edges</h4>
+            <p>Number of edges in the tree. This value is equal to <b>number of cells - 1</b>, or <b>0</b> - when the tree is empty.</p>
+
+            <h4>Height</h4>
+            <p>Height of the tree. The higher tree, the more operations have to be done to execute the functions.</p>
+            <p>
+                <i>Example of tree with height = 5:</i>
+            </p>
+            <img src="src/images/aboutScreen/a2.png" height="300" />
+
+            <h4>Unique values</h4>
+            <p>Number of unique values in the tree. Two or more of the same values in the tree are counted as one.</p>
+
+            <div class="clearfix"></div>
+            <div class="panel-separator"></div>
 
             <h2>Functions</h2>
             <h3>Insert</h3>
@@ -126,11 +199,26 @@
             <h3>Delete (L)</h3>
             <p>Deletes the value from the tree. If the cell has both children, the child from the left will be promoted.</p>
             <p>
-                <b>Example:</b>
+                <i>Example:</i>
             </p>
+            <img src="src/images/aboutScreen/a3.png" height="250" />
 
             <h3>Delete (R)</h3>
             <p>Deletes the value from the tree. If the cell has both children, the child from the right will be promoted.</p>
+            <p>
+                <i>Example:</i>
+            </p>
+            <img src="src/images/aboutScreen/a4.png" height="250" />
+
+            <h3>Find</h3>
+            <p>Returns a message with number of steps needed to find the value.</p>
+            <p>
+                <i>Example of finding value = 19 in the following tree:</i>
+            </p>
+            <img src="src/images/aboutScreen/a5.png" height="250" />
+            <p>
+                5 steps are needed to find this value
+            </p>
 
             <div class="panel-separator"></div>
             <h2>Author</h2>
@@ -168,7 +256,10 @@
                 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
                 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
                 SOFTWARE.
+                <br />
             </p>
+            <div class="clearfix"></div>
+            <br />
         </div>
     </div>
 

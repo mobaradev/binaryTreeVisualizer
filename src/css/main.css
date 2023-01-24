@@ -210,11 +210,12 @@ table {
 
 .screen-wrapper {
     width: 700px;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    padding-bottom: 150px;
 }
 
 .screen-x-button {
