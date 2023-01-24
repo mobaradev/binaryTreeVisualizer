@@ -53,7 +53,7 @@ class InputManager {
             InputManager.cursor.y = event.clientY;
         });
 
-        document.getElementById("canvas").addEventListener('keydown', (event) => {
+        window.addEventListener('keydown', (event) => {
             const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
             const code = event.code;
 
@@ -72,7 +72,7 @@ class InputManager {
             }
         });
 
-        document.getElementById("canvas").addEventListener('keyup', (event) => {
+       window.addEventListener('keyup', (event) => {
             const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
             const code = event.code;
 
