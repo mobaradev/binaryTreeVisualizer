@@ -7,6 +7,13 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
+a {
+    color: black;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
@@ -37,7 +44,6 @@ body {
     width: 240px;
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.95);
-    /*border-right: 4px solid yellow;*/
     box-shadow: 3px 0 6px #cecbcb;
     border-right: 2px solid silver;
     position: absolute;
@@ -79,9 +85,7 @@ body {
 }
 
 .panel-number-input:focus {
-    /*outline: none;*/
     outline-style: dotted;
-    /*outline: antiquewhite;*/
 }
 
 .panel-section {
@@ -96,10 +100,7 @@ body {
     width: 100%;
     height: auto;
     margin: 8px 0;
-    /*margin-left: 50%;*/
-    /*margin-left: 24px;*/
     font-size: 14px;
-    /*transform: translateX(-50%);*/
     cursor: pointer;
     background: none;
     color: #5d5d5d;
@@ -165,20 +166,11 @@ table {
     font-size: 18px;
 }
 
-a {
-    color: black;
-    font-weight: bold;
-    font-style: normal;
-    text-decoration: none;
-}
-
 .github-logo-img {
     display: inline-block;
     vertical-align: middle;
     margin-bottom: 4px;
 }
-
-/* start screen */
 
 .large-button {
     width: 120px;
@@ -237,8 +229,6 @@ a {
 .start-screen-wrapper {
     width: 500px;
     height: auto;
-    top: 50%;
-    transform: translate(-50%, -60%);
 }
 
 .centered-wrapper {
@@ -249,7 +239,6 @@ a {
 
 .logo-with-author-full {
     width: 388px;
-    /*background-color: red;*/
     text-align: center;
     float: left;
 }
